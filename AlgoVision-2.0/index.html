@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AlgoVision 2.0 | DSA Analytics Platform</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Algo<span>Vision</span></h2>
+            <p>DSA Analytics Platform</p>
+        </div>
+
+        <nav>
+            <a href="#dashboard" class="nav-link active">⌂ Dashboard</a>
+            <a href="#moduleWorkspace"
+               class="nav-link"
+               onclick="showModule('ingestion')">
+               ▣ Data Ingestion
+            </a>
+
+            <a href="#moduleWorkspace"
+               class="nav-link"
+               onclick="showModule('catalog')">
+               ▣ Cataloging
+            </a>
+
+            <a href="#moduleWorkspace"
+               class="nav-link"
+               onclick="showModule('search')">
+               ⌕ Search Engine
+            </a>
+
+            <a href="#moduleWorkspace"
+               class="nav-link"
+               onclick="showModule('optimizer')">
+               ⚡ Optimizer
+            </a>
+
+            <a href="#moduleWorkspace"
+               class="nav-link"
+               onclick="showModule('graph')">
+               ◉ Graph Visualization
+            </a>
+            <button class="reset-btn" onclick="resetAllData()">
+               ↻ Reset Project Data
+            </button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>Capstone Project</p>
+            <small>Data Structures & Algorithms</small>
+        </div>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="topbar">
+            <div>
+                <h1>Algorithm Analytics Dashboard</h1>
+                <p>Visualizing Data Structures & Algorithms in Action</p>
+            </div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                System Active
+            </div>
+        </header>
+
+
+        <!-- Dashboard -->
+        <section id="dashboard">
+
+            <div class="hero">
+                <div>
+                    <span class="badge">ALGO-VISION 2.0</span>
+                    <h2>Explore the Power of<br>Data Structures & Algorithms</h2>
+                    <p>
+                        An interactive platform demonstrating real-world
+                        applications of queues, trees, heaps, graphs,
+                        greedy algorithms and dynamic programming.
+                    </p>
+
+                    <button onclick="scrollToModules()">
+                        Explore Modules →
+                    </button>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="algorithm-circle">
+                        <span>DSA</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Statistics -->
+            <div class="stats-container">
+
+                <div class="stat-card">
+                    <div class="stat-icon">◫</div>
+                    <div>
+                        <h3 id="queueCount">0</h3>
+                        <p>Queue Items</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">▣</div>
+                    <div>
+                        <h3 id="catalogCount">0</h3>
+                        <p>Catalog Items</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">⌕</div>
+                    <div>
+                        <h3>BST</h3>
+                        <p>Search Structure</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">◉</div>
+                    <div>
+                        <h3>Graph</h3>
+                        <p>Route Network</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Modules -->
+            <div class="section-title" id="modules">
+                <h2>Algorithm Modules</h2>
+                <p>Interact with different Data Structures and Algorithms</p>
+            </div>
+
+
+            <div class="modules-grid">
+
+                <div class="module-card" id="ingestion">
+                    <div class="module-icon">↥</div>
+                    <h3>Data Ingestion</h3>
+                    <p>Queue and Hash Table implementation for processing incoming data.</p>
+
+                    <span class="tag">Queue</span>
+                    <span class="tag">Hashing</span>
+
+                    <button onclick="showModule('ingestion')">
+                        Open Module
+                    </button>
+                </div>
+
+
+                <div class="module-card" id="catalog">
+                    <div class="module-icon">▣</div>
+                    <h3>Cataloging</h3>
+                    <p>Manage structured data using Array operations.</p>
+
+                    <span class="tag">Array</span>
+
+                    <button onclick="showModule('catalog')">
+                        Open Module
+                    </button>
+                </div>
+
+
+                <div class="module-card" id="search">
+                    <div class="module-icon">⌕</div>
+                    <h3>Search Engine</h3>
+                    <p>Efficient searching and prioritization using BST and Heap.</p>
+
+                    <span class="tag">BST</span>
+                    <span class="tag">Heap</span>
+
+                    <button onclick="showModule('search')">
+                        Open Module
+                    </button>
+                </div>
+
+
+                <div class="module-card" id="optimizer">
+                    <div class="module-icon">⚡</div>
+                    <h3>Optimizer</h3>
+                    <p>Optimization problems solved using Greedy and Dynamic Programming.</p>
+
+                    <span class="tag">Greedy</span>
+                    <span class="tag">Dynamic Programming</span>
+
+                    <button onclick="showModule('optimizer')">
+                        Open Module
+                    </button>
+                </div>
+
+
+                <div class="module-card" id="graph">
+                    <div class="module-icon">◉</div>
+                    <h3>Route Visualization</h3>
+                    <p>Represent networks and calculate optimized paths using Graph algorithms.</p>
+
+                    <span class="tag">Graph</span>
+
+                    <button onclick="showModule('graph')">
+                        Open Module
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Dynamic Module Area -->
+        <section id="moduleWorkspace" class="workspace">
+            <div class="workspace-header">
+                <h2>Interactive Workspace</h2>
+                <p>Select a module above to begin.</p>
+            </div>
+
+            <div id="workspaceContent">
+                <div class="empty-workspace">
+                    <div class="empty-icon">⌘</div>
+                    <h3>No Module Selected</h3>
+                    <p>Choose an algorithm module to interact with its implementation.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Algorithm Files -->
+    <script src="algorithms/queue.js"></script>
+    <script src="algorithms/hashTable.js"></script>
+    <script src="algorithms/arrayOperations.js"></script>
+    <script src="algorithms/bst.js"></script>
+    <script src="algorithms/heap.js"></script>
+    <script src="algorithms/greedy.js"></script>
+    <script src="algorithms/dynamicProgramming.js"></script>
+    <script src="algorithms/graph.js"></script>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
